@@ -1,0 +1,129 @@
+<html>
+<head>
+  <title>Hero meeting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .button 
+  {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    padding: 16px 32px;
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5%;
+  }
+  .button:hover
+  {
+    background-color: #008CBA;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .textbox
+  {
+    width: 250px;
+    height: 50px;
+    border: 2px solid #008CBA;
+    border-radius: 5%;
+  }
+  .textbox:hover
+  {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0, 0, 0, 0.829);
+  }
+
+  .text
+  {
+  font-size: 100%;
+  }
+  body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9dgLRK0lF23FW_qvWXGLAWyOatoGxeTiudQ&usqp=CAU');
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    text-align:center;
+    padding: 5%;
+  }
+  .whiteText {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  }
+  .center
+  {
+    background-color: rgb(170, 163, 163,0.8);
+    border-radius: 5%;
+    
+  }
+  div 
+  {
+    height: 240px;
+    width: 270px;
+    margin-left: auto;
+      margin-right: auto;
+  }
+</style>
+</head>
+<body>
+<form onsubmit="return f1();" action="sett.html">
+    
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Hero_MotoCorp_Logo.svg/1280px-Hero_MotoCorp_Logo.svg.png" width="250px" height="10%">
+        <br>
+        <br>
+   <div class="center">
+        <br>
+        <input id="uesrname" placeholder="Enter Email-id/Mobile no" class="textbox text "  >
+        <br>
+        
+        <br>
+        <input id="textPass" placeholder="Enter Password" class="textbox text" type="password">
+        <br>
+        <input type="checkbox" onclick="myFunction()" style="text-align: left;">
+        <span class="whiteText">Show Password</span>
+        <br>
+      <button id="mybtn" onclick="f1()" class="button" type="submit">Login</button>
+   </div>
+  </form>
+<script type="text/javascript">
+  function myFunction()
+   {
+    var x = document.getElementById("textPass");
+    if (x.type === "password")
+     {
+      x.type = "text";
+     }
+     else
+     {
+      x.type = "password";
+     }
+   }
+  var input = document.getElementById("textPass");
+  input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+  });
+function f1()
+{
+  var username= document.getElementById("uesrname").value;
+  var password= document.getElementById("textPass").value;
+  if(username=="hero" && (password=="12345"))
+  {
+    return true;
+  }
+  else
+  {
+  alert("User Name or Password is Invalid");
+  return false;
+  }
+}
+</script>
+</body>
+</html>
